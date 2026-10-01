@@ -1,29 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 :root {
   --bg: #F6F6F7; --surface: #FFFFFF; --text: #0B0B0D; --muted: #6B6B73; --line: rgba(0,0,0,0.08); --accent: #0B0B0D;
+  --carbs: #2E9BEA; --fat: #8F62F5; --protein: #F0A020;
   color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #0A0A0B; --surface: #161618; --text: #F5F5F7; --muted: #8E8E96; --line: rgba(255,255,255,0.08); --accent: #F5F5F7; }
+  :root { --bg: #0A0A0B; --surface: #161618; --text: #F5F5F7; --muted: #8E8E96; --line: rgba(255,255,255,0.08); --accent: #F5F5F7;
+    --carbs: #6FC3FF; --fat: #B18CFF; --protein: #FFB547; }
 }
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  font: 16px/1.65 Geist, -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; -webkit-font-smoothing: antialiased;
 }
-main { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 24px; }
-header a.brand { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
-nav.lang a { color: var(--muted); font-size: 14px; margin-left: 12px; }
-h1 { font-size: 32px; line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 8px; }
-h2 { font-size: 19px; letter-spacing: -0.01em; margin: 32px 0 8px; }
-p, li { color: var(--text); }
+main { max-width: 680px; margin: 0 auto; padding: 28px 22px 64px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 20px; margin-bottom: 36px;
+  border-bottom: 1px solid var(--line); }
+/* Nom de l'app avec les trois points des macros (glucides, lipides, protéines), comme dans l'app. */
+header a.brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; letter-spacing: -0.03em;
+  color: var(--text); text-decoration: none; }
+.dots { display: inline-flex; gap: 4px; }
+.dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--carbs); }
+.dots i:nth-child(2) { background: var(--fat); }
+.dots i:nth-child(3) { background: var(--protein); }
+nav.lang a { color: var(--muted); font-size: 14px; font-weight: 500; text-decoration: none; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; }
+h1 { font-size: 34px; line-height: 1.1; letter-spacing: -0.04em; margin: 0 0 10px; }
+h2 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin: 40px 0 10px; }
+p, li { color: var(--text); margin-top: 0; }
+p { margin-bottom: 14px; }
+li { margin-bottom: 6px; }
 .muted { color: var(--muted); font-size: 14px; }
-a { color: var(--accent); }
+a { color: var(--accent); text-underline-offset: 3px; }
+ul { padding-left: 20px; margin: 0 0 14px; }
+
+/* Documents légaux : articles numérotés, comme un texte officiel. */
+main.doc { counter-reset: article; }
+main.doc > h2 { counter-increment: article; padding-top: 28px; border-top: 1px solid var(--line); }
+main.doc > h2::before { content: counter(article) ". "; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* Résumé en tête de page : simple filet à gauche, sans carte. */
+section.summary { margin: 28px 0 8px; padding: 2px 0 2px 18px; border-left: 3px solid var(--text); }
+section.summary h2 { margin: 0 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+section.summary ul { list-style: none; padding: 0; margin: 0; }
+section.summary li { margin-bottom: 8px; }
 section.card { background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 4px 20px; margin: 16px 0; }
-ul { padding-left: 20px; }
-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-th { font-weight: 600; }
+
+.table { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; margin-bottom: 14px; }
+th, td { text-align: left; padding: 12px 10px 12px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 13px; font-weight: 600; color: var(--muted); }
+td:first-child { font-weight: 500; }
 .links a { display: block; padding: 16px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
   margin: 10px 0; text-decoration: none; color: var(--text); font-weight: 600; }
-footer { margin-top: 48px; color: var(--muted); font-size: 13px; }
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; line-height: 1.8; }
+footer strong { color: var(--text); font-weight: 600; }
+footer a { color: var(--muted); }
