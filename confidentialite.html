@@ -10,7 +10,7 @@
 <main class="doc">
   <header><a class="brand" href="index.html"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>Yoyoyo</a><nav class="lang"><a href="privacy.html" lang="en">English</a></nav></header>
   <h1>Politique de confidentialité</h1>
-  <p class="muted">Dernière mise à jour : 1er octobre 2026</p>
+  <p class="muted">Dernière mise à jour : 6 octobre 2026</p>
 
   <p>Yoyoyo t’aide à trouver un repas qui correspond à tes glucides, lipides et protéines. Cette page explique,
   simplement, quelles données l’app utilise, où elles vont et comment les effacer.</p>
@@ -49,6 +49,8 @@
     <tr><td>Open Food Facts (association, France)</td><td>Reconnaître un produit scanné ou cherché par nom</td>
       <td>Le code-barres ou le nom cherché, et l’adresse IP ; aucune donnée te concernant</td></tr>
     <tr><td>Apple (App Store)</td><td>Télécharger l’app, payer un abonnement</td><td>Géré par Apple selon sa propre politique</td></tr>
+    <tr><td>PostHog (serveurs dans l’Union européenne, Allemagne)</td><td>Statistiques anonymes, pour améliorer l’app (tu peux les couper)</td>
+      <td>Un identifiant tiré au hasard, sans lien avec ton compte, et des événements d’utilisation (voir « Statistiques ») ; l’adresse IP est visible techniquement mais n’est pas utilisée pour te localiser</td></tr>
   </table>
 
   <h2>Compte anonyme et sauvegarde</h2>
@@ -67,13 +69,25 @@
   informations de paiement.</p>
 
   <h2>Statistiques</h2>
-  <p>L’app n’envoie aucune statistique d’utilisation. Si des statistiques anonymes étaient ajoutées un jour, elles seraient
-  désactivées par défaut et ne contiendraient ni tes repas ni ton stock.</p>
+  <p>L’app envoie des statistiques anonymes à PostHog, hébergé dans l’Union européenne, pour savoir ce qui marche et
+  ce qui bloque. Tu peux les couper à tout moment dans Réglages › Données et confidentialité › Statistiques anonymes.</p>
+  <ul>
+    <li><strong>Ce qui est envoyé</strong> : l’ouverture de l’app, l’étape de l’accueil affichée, une recherche de repas
+      (sans tes macros), la recette ouverte ou cuisinée (son nom dans le catalogue), le nombre d’ingrédients ajoutés aux
+      courses, l’affichage de l’écran Premium et le résultat d’un achat. Avec chaque événement : la langue, la version de
+      l’app et si Premium est actif.</li>
+    <li><strong>Ce qui n’est jamais envoyé</strong> : ton stock, ta liste de courses, tes macros, tes allergies, ton
+      régime, ton nom, ton e-mail.</li>
+    <li><strong>Anonyme</strong> : l’identifiant est tiré au hasard à l’installation et n’est pas relié à ton compte ni à
+      ton abonnement. Pas de publicité, pas de profil, pas de suivi d’une app à l’autre.</li>
+  </ul>
 
   <h2>Pourquoi nous avons le droit de traiter ces données</h2>
   <ul>
     <li>Pour faire fonctionner l’app et ton abonnement : l’exécution du service que tu demandes.</li>
     <li>Pour tes allergies et ton régime : ton consentement, que tu peux retirer à tout moment en les effaçant.</li>
+    <li>Pour les statistiques anonymes : notre intérêt légitime à améliorer l’app ; tu peux t’y opposer en les coupant
+      dans les Réglages.</li>
   </ul>
 
   <h2>Combien de temps</h2>
